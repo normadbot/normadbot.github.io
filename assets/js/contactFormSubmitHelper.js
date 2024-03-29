@@ -9,7 +9,7 @@ $(document).ready(function () {
     $.ajax({
       type: "POST",
       url:
-        "https://script.google.com/macros/s/AKfycbxNwGZrXowpHvfPkJQ7aLZo384UxbwkPRyF0oabXw/exec",
+        "https://script.google.com/macros/s/AKfycbwc-LGHC3-SAyMQEvGHvErNgdZTxDOUvRQxl6ouIZd4UVtYg9h4/exec",
       data: formData,
       dataType: "html",
     });

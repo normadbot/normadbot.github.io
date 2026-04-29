@@ -1,539 +1,286 @@
 <!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarabjeet Singh | Senior Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020203;
+        }
 
-<html>
-  <head>
-    <title>Sarabjeet Singh</title>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript
-      ><link rel="stylesheet" href="assets/css/noscript.css"
-    /></noscript>
-  </head>
-  <body class="is-preload">
-    <!-- Wrapper -->
-    <div id="wrapper">
-      <!-- Header -->
-      <header id="header">
-        <div
-          class="logo"
-          style="
-            display: inline-block;
-            height: 100px;
-            width: 100px;
-            border-radius: 100%;
-            border: 2px solid black;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-          "
-        >
-          <img
-            src="images/sarab.jpg"
-            alt=""
-            style="
-              width: 100%;
-              height: 100%;
-              position: absolute;
-              top: 0;
-              left: 0;
-            "
-          />
-        </div>
-        <div class="content">
-          <div class="inner">
-            <h1>Sarabjeet Singh</h1>
-            <p>
-              Software developer by profession and loves to work on web
-              development frameworks<br />
-              Feel free to connect with me via
-              <a
-                target="_blank"
-                href="https://www.linkedin.com/in/sarabjeetsingh5/"
-                >linkedIn</a
-              >.
-            </p>
-          </div>
-        </div>
-        <nav>
-          <ul>
-            <li><a href="#intro">Intro</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a onclick="onOpenContacts()" href="#contact">Contact</a></li>
-            <!--<li><a href="#elements">Elements</a></li>-->
-          </ul>
-        </nav>
-      </header>
+        .grainy-bg {
+            background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+            opacity: 0.2;
+            filter: brightness(100%) contrast(150%);
+        }
 
-      <!-- Main -->
-      <div id="main">
-        <!-- Intro -->
-        <article id="intro">
-          <h2 class="major">Intro</h2>
-          <span class="image main"><div class="shadow">Welcome</div></span>
-          <p>
-            I am web developer with great enthusiasm for new frameworks like
-            ReactJS,spring and Primefaces. I also love to solve competetive
-            coding problems.
-          </p>
-          <p>
-            Currently focusing more on frontend development, as I currently work
-            mostly on backend. I have worked on both monolithic and
-            microservices architecture based applications.
-          </p>
-        </article>
+        .bento-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-        <!-- Work -->
-        <article id="work">
-          <h2 class="major">Work</h2>
-          <span class="image main"><img src="images/intro.jpg" alt="" /></span>
-          <p>
-            You can look for my work on my
-            <a target="_blank" href="https://github.com/normadbot">github</a>. I
-            am currently focused on building more small prototypes for frontend
-            developments.
-          </p>
-          <p>
-            In free time would like to solve DS and algo problems to increase my
-            problem solving skills &#128521;. My
-            <a target="_blank" href="https://leetcode.com/sarabjeet277/"
-              >leetcode</a
-            >
-            account for any references.
-          </p>
-          <p>
-            For any work related queries or new opportunities reach out to me on
-            my
-            <a
-              target="_blank"
-              href="https://www.linkedin.com/in/sarabjeetsingh5/"
-              >LinkedIn</a
-            >.
-          </p>
-        </article>
+        .bento-card:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+        }
 
-        <!-- About -->
-        <article id="about">
-          <h2 class="major">About</h2>
-          <span class="image main"
-            ><img src="images/about_me.jpg" alt=""
-          /></span>
-          <p>
-            I am a software developer by profession with 2+ years of experience
-            in web development and currently working at an MNC. I have a degree
-            in Bachelors in Technology with Computer Science. In my free time
-            would love to stream on netflix or youtube, my favourite genre are
-            action, sci-fi and tech videos on youtube.
-          </p>
-        </article>
+        .text-glow {
+            text-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+        }
 
-        <!-- Contact -->
-        <article id="contact">
-          <h2 class="major">Contact</h2>
-          <form
-            onsubmit="event.preventDefault()"
-            id="contactForm"
-            method="post"
-          >
-            <div id="contactFirstDiv" class="fields">
-              <div class="field half">
-                <label for="name">Name</label>
-                <input
-                  placeholder="What your Mom calls you"
-                  type="text"
-                  name="name"
-                  id="name"
-                />
-              </div>
-              <div class="field half">
-                <label for="email">Email</label>
-                <input
-                  required
-                  placeholder="your.name@email.com"
-                  type="text"
-                  name="email"
-                  id="email"
-                />
-              </div>
-              <div class="field">
-                <label for="message">Message</label>
-                <textarea
-                  placeholder="Tell us what's on your mind..."
-                  name="message"
-                  id="message"
-                  rows="4"
-                ></textarea>
-              </div>
-            </div>
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.8; }
+        }
+        .animate-pulse-slow {
+            animation: pulse-slow 3s infinite;
+        }
+    </style>
+</head>
+<body class="text-zinc-400 overflow-x-hidden selection:bg-blue-500/30 selection:text-white">
 
-            <ul id="contactFirstList" class="actions">
-              <li>
-                <input type="submit" value="Send Message" class="primary" />
-              </li>
-              <li><input type="reset" value="Reset" /></li>
-            </ul>
-
-            <div
-              id="contactSecondDiv"
-              style="display: none"
-              class="thankyou_message"
-            >
-              <!-- You can customize the thankyou message by editing the code below -->
-              <h2>
-                <em>Thanks</em> for contacting me! I will get back to you soon!
-              </h2>
-            </div>
-          </form>
-          <ul class="icons">
-            <li>
-              <a
-                target="_blank"
-                href="https://github.com/normadbot"
-                class="icon brands fa-github"
-                ><span class="label">GitHub</span></a
-              >
-            </li>
-            <li>
-              <a
-                target="_blank"
-                href="https://www.linkedin.com/in/sarabjeetsingh5/"
-                class="icon brands fa-linkedin"
-                ><span class="label">GitHub</span></a
-              >
-            </li>
-          </ul>
-        </article>
-
-        <!-- Elements -->
-        <article id="elements">
-          <h2 class="major">Elements</h2>
-
-          <section>
-            <h3 class="major">Text</h3>
-            <p>
-              This is <b>bold</b> and this is <strong>strong</strong>. This is
-              <i>italic</i> and this is <em>emphasized</em>. This is
-              <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-              This is <u>underlined</u> and this is code:
-              <code>for (;;) { ... }</code>. Finally,
-              <a href="#">this is a link</a>.
-            </p>
-            <hr />
-            <h2>Heading Level 2</h2>
-            <h3>Heading Level 3</h3>
-            <h4>Heading Level 4</h4>
-            <h5>Heading Level 5</h5>
-            <h6>Heading Level 6</h6>
-            <hr />
-            <h4>Blockquote</h4>
-            <blockquote>
-              Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis
-              sagittis eget tempus euismod. Vestibulum ante ipsum primis in
-              faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat
-              ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in
-              faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.
-            </blockquote>
-            <h4>Preformatted</h4>
-            <pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-          </section>
-
-          <section>
-            <h3 class="major">Lists</h3>
-
-            <h4>Unordered</h4>
-            <ul>
-              <li>Dolor pulvinar etiam.</li>
-              <li>Sagittis adipiscing.</li>
-              <li>Felis enim feugiat.</li>
-            </ul>
-
-            <h4>Alternate</h4>
-            <ul class="alt">
-              <li>Dolor pulvinar etiam.</li>
-              <li>Sagittis adipiscing.</li>
-              <li>Felis enim feugiat.</li>
-            </ul>
-
-            <h4>Ordered</h4>
-            <ol>
-              <li>Dolor pulvinar etiam.</li>
-              <li>Etiam vel felis viverra.</li>
-              <li>Felis enim feugiat.</li>
-              <li>Dolor pulvinar etiam.</li>
-              <li>Etiam vel felis lorem.</li>
-              <li>Felis enim et feugiat.</li>
-            </ol>
-            <h4>Icons</h4>
-            <ul class="icons">
-              <li>
-                <a href="#" class="icon brands fa-twitter"
-                  ><span class="label">Twitter</span></a
-                >
-              </li>
-              <li>
-                <a href="#" class="icon brands fa-facebook-f"
-                  ><span class="label">Facebook</span></a
-                >
-              </li>
-              <li>
-                <a href="#" class="icon brands fa-instagram"
-                  ><span class="label">Instagram</span></a
-                >
-              </li>
-              <li>
-                <a
-                  target="_blank"
-                  href="https://github.com/normadbot"
-                  class="icon brands fa-github"
-                  ><span class="label">Github</span></a
-                >
-              </li>
-            </ul>
-
-            <h4>Actions</h4>
-            <ul class="actions">
-              <li><a href="#" class="button primary">Default</a></li>
-              <li><a href="#" class="button">Default</a></li>
-            </ul>
-            <ul class="actions stacked">
-              <li><a href="#" class="button primary">Default</a></li>
-              <li><a href="#" class="button">Default</a></li>
-            </ul>
-          </section>
-
-          <section>
-            <h3 class="major">Table</h3>
-            <h4>Default</h4>
-            <div class="table-wrapper">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Item One</td>
-                    <td>Ante turpis integer aliquet porttitor.</td>
-                    <td>29.99</td>
-                  </tr>
-                  <tr>
-                    <td>Item Two</td>
-                    <td>Vis ac commodo adipiscing arcu aliquet.</td>
-                    <td>19.99</td>
-                  </tr>
-                  <tr>
-                    <td>Item Three</td>
-                    <td>Morbi faucibus arcu accumsan lorem.</td>
-                    <td>29.99</td>
-                  </tr>
-                  <tr>
-                    <td>Item Four</td>
-                    <td>Vitae integer tempus condimentum.</td>
-                    <td>19.99</td>
-                  </tr>
-                  <tr>
-                    <td>Item Five</td>
-                    <td>Ante turpis integer aliquet porttitor.</td>
-                    <td>29.99</td>
-                  </tr>
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <td colspan="2"></td>
-                    <td>100.00</td>
-                  </tr>
-                </tfoot>
-              </table>
-            </div>
-
-            <h4>Alternate</h4>
-            <div class="table-wrapper">
-              <table class="alt">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Item One</td>
-                    <td>Ante turpis integer aliquet porttitor.</td>
-                    <td>29.99</td>
-                  </tr>
-                  <tr>
-                    <td>Item Two</td>
-                    <td>Vis ac commodo adipiscing arcu aliquet.</td>
-                    <td>19.99</td>
-                  </tr>
-                  <tr>
-                    <td>Item Three</td>
-                    <td>Morbi faucibus arcu accumsan lorem.</td>
-                    <td>29.99</td>
-                  </tr>
-                  <tr>
-                    <td>Item Four</td>
-                    <td>Vitae integer tempus condimentum.</td>
-                    <td>19.99</td>
-                  </tr>
-                  <tr>
-                    <td>Item Five</td>
-                    <td>Ante turpis integer aliquet porttitor.</td>
-                    <td>29.99</td>
-                  </tr>
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <td colspan="2"></td>
-                    <td>100.00</td>
-                  </tr>
-                </tfoot>
-              </table>
-            </div>
-          </section>
-
-          <section>
-            <h3 class="major">Buttons</h3>
-            <ul class="actions">
-              <li><a href="#" class="button primary">Primary</a></li>
-              <li><a href="#" class="button">Default</a></li>
-            </ul>
-            <ul class="actions">
-              <li><a href="#" class="button">Default</a></li>
-              <li><a href="#" class="button small">Small</a></li>
-            </ul>
-            <ul class="actions">
-              <li>
-                <a href="#" class="button primary icon solid fa-download"
-                  >Icon</a
-                >
-              </li>
-              <li>
-                <a href="#" class="button icon solid fa-download">Icon</a>
-              </li>
-            </ul>
-            <ul class="actions">
-              <li><span class="button primary disabled">Disabled</span></li>
-              <li><span class="button disabled">Disabled</span></li>
-            </ul>
-          </section>
-
-          <section>
-            <h3 class="major">Form</h3>
-            <form method="post" action="#">
-              <div class="fields">
-                <div class="field half">
-                  <label for="demo-name">Name</label>
-                  <input
-                    type="text"
-                    name="demo-name"
-                    id="demo-name"
-                    value=""
-                    placeholder="Jane Doe"
-                  />
-                </div>
-                <div class="field half">
-                  <label for="demo-email">Email</label>
-                  <input
-                    type="email"
-                    name="demo-email"
-                    id="demo-email"
-                    value=""
-                    placeholder="jane@untitled.tld"
-                  />
-                </div>
-                <div class="field">
-                  <label for="demo-category">Category</label>
-                  <select name="demo-category" id="demo-category">
-                    <option value="">-</option>
-                    <option value="1">Manufacturing</option>
-                    <option value="1">Shipping</option>
-                    <option value="1">Administration</option>
-                    <option value="1">Human Resources</option>
-                  </select>
-                </div>
-                <div class="field half">
-                  <input
-                    type="radio"
-                    id="demo-priority-low"
-                    name="demo-priority"
-                    checked
-                  />
-                  <label for="demo-priority-low">Low</label>
-                </div>
-                <div class="field half">
-                  <input
-                    type="radio"
-                    id="demo-priority-high"
-                    name="demo-priority"
-                  />
-                  <label for="demo-priority-high">High</label>
-                </div>
-                <div class="field half">
-                  <input type="checkbox" id="demo-copy" name="demo-copy" />
-                  <label for="demo-copy">Email me a copy</label>
-                </div>
-                <div class="field half">
-                  <input
-                    type="checkbox"
-                    id="demo-human"
-                    name="demo-human"
-                    checked
-                  />
-                  <label for="demo-human">Not a robot</label>
-                </div>
-                <div class="field">
-                  <label for="demo-message">Message</label>
-                  <textarea
-                    name="demo-message"
-                    id="demo-message"
-                    placeholder="Enter your message"
-                    rows="6"
-                  ></textarea>
-                </div>
-              </div>
-              <ul class="actions">
-                <li>
-                  <input type="submit" value="Send Message" class="primary" />
-                </li>
-                <li><input type="reset" value="Reset" /></li>
-              </ul>
-            </form>
-          </section>
-        </article>
-      </div>
-
-      <!-- Footer -->
-      <footer id="footer">
-        <!-- <p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p> -->
-      </footer>
+    <!-- Background Elements -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/10 blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-600/5 blur-[120px] rounded-full"></div>
+        <div class="absolute inset-0 grainy-bg"></div>
     </div>
 
-    <!-- BG -->
-    <div id="bg"></div>
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 px-6 sm:px-12 py-10">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-4 group cursor-pointer">
+                <div class="w-10 h-10 border border-white/10 flex items-center justify-center rounded-xl bg-gradient-to-br from-white/10 to-transparent group-hover:border-blue-500/50 transition-all">
+                    <span class="text-white font-bold text-sm">SS</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-white font-bold text-xs tracking-widest uppercase">Sarabjeet Singh</span>
+                    <span class="text-[10px] font-bold text-blue-500 tracking-tighter uppercase">Senior Engineer</span>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center gap-10 text-[10px] font-bold tracking-[0.2em] uppercase">
+                <a href="mailto:sabysingh298@gmail.com" class="hover:text-blue-400 transition-colors flex items-center gap-2 text-zinc-500">
+                    <i data-lucide="mail" class="w-3 h-3"></i> Contact
+                </a>
+                <a href="https://linkedin.com/in/sarabjeetsingh5" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-2 text-zinc-500">
+                    <i data-lucide="linkedin" class="w-3 h-3"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/contactFormSubmitHelper.js"></script>
-  </body>
+    <main class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 pt-48 pb-32">
+        <!-- Hero Section -->
+        <section class="mb-32">
+            <div class="max-w-4xl">
+                <h1 class="text-6xl md:text-8xl font-bold tracking-tighter text-white mb-10 leading-[0.85]">
+                    Engineering systems <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-zinc-400 via-zinc-200 to-zinc-500">at high velocity.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-zinc-500 max-w-3xl leading-relaxed font-medium">
+                    Senior Software Engineer specialized in <span class="text-white font-semibold italic">Telekom</span>, <span class="text-white font-semibold italic">logistics infrastructure</span>, distributed backend engines, and enterprise-scale cloud architectures.
+                </p>
+            </div>
+        </section>
+
+        <!-- Bento Grid Experience -->
+        <section class="mb-32">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-[10px] font-black text-zinc-700 uppercase tracking-[0.5em]">Professional Records</h2>
+                <div class="h-px flex-1 bg-white/5"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-12 gap-6">
+                <!-- Teleport -->
+                <div class="md:col-span-8 group relative overflow-hidden bento-card rounded-[32px] p-10">
+                    <div class="absolute top-0 right-0 p-8 text-blue-500 opacity-20 group-hover:opacity-100 transition-opacity">
+                        <i data-lucide="arrow-up-right" class="w-8 h-8"></i>
+                    </div>
+                    <div class="relative z-10 h-full flex flex-col">
+                        <div class="text-[10px] font-black text-blue-500 uppercase tracking-[0.3em] mb-4 flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+                            Active Infrastructure
+                        </div>
+                        <h3 class="text-4xl font-bold text-white mb-2 tracking-tighter">Teleport / Air Asia</h3>
+                        <p class="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-8">Senior Software Engineer • Logistics Tech</p>
+                        <p class="text-lg text-zinc-400 leading-relaxed max-w-md mb-8">
+                            Leading the development of digital logistics engines that power aviation cargo and supply chain movements across the APAC region.
+                        </p>
+                        <div class="mt-auto flex gap-3">
+                            <span class="text-[10px] font-bold text-zinc-600 border border-white/5 px-3 py-1 rounded-full uppercase tracking-tighter">System Design</span>
+                            <span class="text-[10px] font-bold text-zinc-600 border border-white/5 px-3 py-1 rounded-full uppercase tracking-tighter">Supply Chain</span>
+                            <span class="text-[10px] font-bold text-zinc-600 border border-white/5 px-3 py-1 rounded-full uppercase tracking-tighter">GCP</span>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-blue-600/10 blur-[80px] rounded-full group-hover:bg-blue-600/20 transition-all duration-700"></div>
+                </div>
+
+                <!-- Deutsche Telekom -->
+                <div class="md:col-span-4 bento-card rounded-[32px] p-10 flex flex-col">
+                    <div class="text-[10px] font-black text-zinc-600 uppercase tracking-[0.3em] mb-4">2022 — 2026</div>
+                    <h3 class="text-2xl font-bold text-white mb-2 tracking-tighter">Deutsche Telekom</h3>
+                    <p class="text-xs font-bold text-pink-500 uppercase tracking-widest mb-6">SDE — II</p>
+                    <p class="text-sm text-zinc-500 leading-relaxed mb-8">
+                        Architected Kafka event streaming for massive router telemetry across 7+ European markets.
+                    </p>
+                    <div class="mt-auto flex flex-wrap gap-2">
+                        <span class="text-[9px] font-bold text-zinc-600 border border-white/5 px-2 py-1 rounded uppercase italic">Kafka</span>
+                        <span class="text-[9px] font-bold text-zinc-600 border border-white/5 px-2 py-1 rounded uppercase italic">Spring Boot</span>
+                    </div>
+                </div>
+
+                <!-- Siemens -->
+                <div class="md:col-span-4 bento-card rounded-[32px] p-10 flex flex-col">
+                    <div class="text-[10px] font-black text-zinc-600 uppercase tracking-[0.3em] mb-4">2019 — 2022</div>
+                    <h3 class="text-2xl font-bold text-white mb-2 tracking-tighter">Siemens</h3>
+                    <p class="text-xs font-bold text-cyan-500 uppercase tracking-widest mb-6">Software Developer</p>
+                    <p class="text-sm text-zinc-500 leading-relaxed mb-8">
+                        Digitized B2B transactions through EDI/XML platforms and led containerization initiatives.
+                    </p>
+                    <div class="mt-auto flex flex-wrap gap-2">
+                        <span class="text-[9px] font-bold text-zinc-600 border border-white/5 px-2 py-1 rounded uppercase italic">OpenShift</span>
+                        <span class="text-[9px] font-bold text-zinc-600 border border-white/5 px-2 py-1 rounded uppercase italic">B2B Integration</span>
+                    </div>
+                </div>
+
+                <!-- SaluteMinds -->
+                <div class="md:col-span-8 group bg-gradient-to-br from-zinc-900 to-black border border-white/5 rounded-[32px] p-10 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div class="grid md:grid-cols-2 gap-12 relative z-10">
+                        <div>
+                            <div class="inline-flex items-center gap-2 text-[10px] font-black text-zinc-500 uppercase tracking-[0.3em] mb-6">
+                                <i data-lucide="calendar" class="w-3 h-3 text-blue-500"></i>
+                                First Freelance Client
+                            </div>
+                            <h3 class="text-4xl font-bold text-white mb-6 tracking-tighter flex items-center gap-3">
+                                SaluteMinds 
+                                <a href="https://www.saluteminds.com/" target="_blank" class="text-zinc-600 hover:text-white transition-colors">
+                                    <i data-lucide="external-link" class="w-5 h-5"></i>
+                                </a>
+                            </h3>
+                            <p class="text-zinc-500 leading-relaxed text-sm italic">
+                                Developed an appointment booking system for mental health patients featuring secure therapist-patient scheduling workflows.
+                            </p>
+                        </div>
+                        <div class="flex flex-col justify-center gap-4">
+                            <div class="bg-white/5 border border-white/5 p-4 rounded-2xl">
+                                <div class="text-[10px] font-black text-blue-400 uppercase mb-1 font-bold">Role</div>
+                                <div class="text-sm text-white font-medium italic font-semibold tracking-wide">Full-stack Engineer</div>
+                            </div>
+                            <div class="bg-white/5 border border-white/5 p-4 rounded-2xl">
+                                <div class="text-[10px] font-black text-blue-400 uppercase mb-1 font-bold">Context</div>
+                                <div class="text-sm text-white font-medium italic font-semibold tracking-wide">Healthcare Scheduling</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Matrix -->
+        <section class="mb-32">
+            <div class="flex items-center gap-4 mb-16">
+                <h2 class="text-[10px] font-black text-zinc-700 uppercase tracking-[0.5em]">Capabilities Matrix</h2>
+                <div class="h-px flex-1 bg-white/5"></div>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-y-16">
+                <!-- Backend -->
+                <div class="space-y-6 group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center border border-white/5 group-hover:border-white/10 transition-all shadow-inner">
+                            <i data-lucide="terminal" class="w-5 h-5 text-blue-500"></i>
+                        </div>
+                        <h3 class="text-white font-bold tracking-tight">Backend Core</h3>
+                    </div>
+                    <p class="text-sm text-zinc-500 leading-relaxed group-hover:text-zinc-400 transition-colors">
+                        Java 17+, Spring Boot, WebFlux, Quarkus, Node.js
+                    </p>
+                </div>
+                <!-- Messaging -->
+                <div class="space-y-6 group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center border border-white/5 group-hover:border-white/10 transition-all shadow-inner">
+                            <i data-lucide="database" class="w-5 h-5 text-purple-500"></i>
+                        </div>
+                        <h3 class="text-white font-bold tracking-tight">Data & Event Mesh</h3>
+                    </div>
+                    <p class="text-sm text-zinc-500 leading-relaxed group-hover:text-zinc-400 transition-colors">
+                        Apache Kafka, Redis, MongoDB, PostgreSQL, OpenSearch
+                    </p>
+                </div>
+                <!-- Cloud -->
+                <div class="space-y-6 group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center border border-white/5 group-hover:border-white/10 transition-all shadow-inner">
+                            <i data-lucide="cloud" class="w-5 h-5 text-cyan-500"></i>
+                        </div>
+                        <h3 class="text-white font-bold tracking-tight">Cloud Fabric</h3>
+                    </div>
+                    <p class="text-sm text-zinc-500 leading-relaxed group-hover:text-zinc-400 transition-colors">
+                        GCP, AWS (Lambda, S3, RDS), Kubernetes, OpenShift
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative border-t border-white/5 bg-[#050506] px-6 sm:px-12 py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto flex flex-col items-center text-center relative z-10">
+            <div class="w-16 h-16 border border-white/10 rounded-3xl flex items-center justify-center bg-black mb-12 shadow-2xl">
+                <div class="w-2 h-2 rounded-full bg-blue-500 animate-ping"></div>
+            </div>
+            <h2 class="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-16 leading-tight">
+                Ready for the next <br>
+                <span class="text-zinc-700 italic">order of magnitude.</span>
+            </h2>
+            
+            <div class="flex flex-wrap justify-center gap-6 mb-32">
+                <a href="mailto:sabysingh298@gmail.com" class="h-16 px-12 bg-white text-black font-black text-[11px] uppercase tracking-[0.2em] rounded-2xl flex items-center hover:scale-105 transition-all shadow-[0_0_40px_rgba(255,255,255,0.1)]">
+                    Initiate Contact
+                </a>
+                <a href="https://linkedin.com/in/sarabjeetsingh5" target="_blank" class="h-16 px-12 bg-transparent border border-white/10 text-white font-black text-[11px] uppercase tracking-[0.2em] rounded-2xl flex items-center hover:bg-white/5 transition-all">
+                    LinkedIn Profile
+                </a>
+            </div>
+
+            <div class="w-full flex flex-col md:flex-row justify-between items-center gap-10 pt-16 border-t border-white/5">
+                <div class="flex items-center gap-4">
+                    <span class="text-[10px] font-black text-zinc-700 uppercase tracking-[0.4em]">Sarabjeet Singh</span>
+                    <div class="w-1 h-1 rounded-full bg-zinc-800"></div>
+                    <span class="text-[10px] font-black text-zinc-700 uppercase tracking-[0.4em]">Senior Engineer</span>
+                </div>
+                <div class="text-[9px] font-black text-zinc-800 uppercase tracking-[0.6em]">
+                    EST. 2026 — SYSTEM_TYPE: BACKEND_STABLE
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-64 bg-blue-600/5 blur-[120px] rounded-full pointer-events-none"></div>
+    </footer>
+
+    <script>
+        // Navbar transparency on scroll
+        const navbar = document.getElementById('navbar');
+        window.onscroll = function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-black/60', 'backdrop-blur-xl', 'py-4', 'border-b', 'border-white/5');
+                navbar.classList.remove('py-10');
+            } else {
+                navbar.classList.remove('bg-black/60', 'backdrop-blur-xl', 'py-4', 'border-b', 'border-white/5');
+                navbar.classList.add('py-10');
+            }
+        };
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
 </html>
